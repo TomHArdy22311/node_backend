@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout Repository') {
             steps {
                 echo 'Cloning the GitHub repository...'
-                git branch: 'main', url: 'https://github.com/TomHArdy22311/kiza_back.git'
+                git branch: 'main', url: 'https://github.com/TomHArdy22311/node_backend.git'
             }
         }
 
