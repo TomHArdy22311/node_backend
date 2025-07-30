@@ -7,7 +7,7 @@ pipeline {
 
     stage('Git') {
       steps {
-        git(url: 'https://github.com/TomHArdy22311/node_backend.git', bracnh: 'main')
+        git(url: 'https://github.com/TomHArdy22311/node_backend.git', branch: 'main')
       }
     }
 
