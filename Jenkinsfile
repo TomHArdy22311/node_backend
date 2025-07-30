@@ -8,6 +8,7 @@ pipeline {
     stage('Git') {
       steps {
         git branch: 'main', url: 'https://github.com/TomHArdy22311/node_backend.git'
+        sh 'git clone'
       }
     }
 
