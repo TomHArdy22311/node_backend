@@ -6,7 +6,7 @@ pipeline {
     }
     
     tools {
-        nodejs 'nodemeriha'
+         nodejs 'nodemeriha'
     stages {
         stage('Checkout Repository') {
             steps {
@@ -38,5 +38,5 @@ pipeline {
             echo '❌ Something went wrong. Please check the logs.'
         }
     }
-        } 
+    }
 }  
