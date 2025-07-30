@@ -7,7 +7,7 @@ pipeline {
 
     stage('Git') {
       steps {
-        git 'https://github.com/TomHArdy22311/node_backend.git'
+        git branch: 'main', url: 'https://github.com/TomHArdy22311/node_backend.git'
       }
     }
 
