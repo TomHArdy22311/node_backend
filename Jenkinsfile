@@ -1,42 +1,26 @@
 pipeline {
-    agent any
+  agent any
 
-    environment {
-        NODE_ENV = 'development'
-    }
-    
-    tools {
-         nodejs 'nodemeriha'
-    stages {
-        stage('Checkout Repository') {
-            steps {
-                echo 'Cloning the GitHub repository...'
-                git branch: 'main', url: 'https://github.com/TomHArdy22311/node_backend.git'
-            }
-        }
+  tools {nodejs "nodemeriha"}
 
-        stage('Install Dependencies') {
-            steps {
-                echo 'Installing dependencies using Node.js 23.11.0...'
-                sh 'npm install'
-            }
-        }
+  stages {
 
-        stage('Deploy') {
-            steps {
-                echo 'Deployment stage (add your deploy steps here)...'
-                sh 'npm start'
-            }
-        }
+    stage('Git') {
+      steps {
+        git 'https://github.com/TomHArdy22311/node_backend.git'
+      }
     }
 
-    post {
-        success {
-            echo '✅ Node.js pipeline completed successfully!'
+    stage('Installation') {
+          steps {
+            sh 'npm install'
+          }
         }
-        failure {
-            echo '❌ Something went wrong. Please check the logs.'
-        }
+
+    stage('start') {
+      steps {
+         sh 'npm start'
+      }
     }
-    }
-}  
+  }
+}
