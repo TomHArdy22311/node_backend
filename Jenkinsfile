@@ -5,8 +5,7 @@ pipeline {
         NODE_ENV = 'development'
     }
     
-    tools 
-    {
+    tools {
         nodejs 'nodemeriha'
     stages {
         stage('Checkout Repository') {
@@ -39,4 +38,4 @@ pipeline {
             echo '❌ Something went wrong. Please check the logs.'
         }
     }
-    }   
+}   
