@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  tools {nodejs "nodemeriha"}
+  tools {nodejs "Jedi"}
 
   stages {
 
