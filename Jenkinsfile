@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  tools {node "Jedi"}
+  tools {nodejs "Jedi"}
 
   stages {
     stage('Git') {
