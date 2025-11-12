@@ -2,6 +2,10 @@ pipeline {
   agent any
 
   tools {nodejs "Jedi"}
+  environment {
+    PORT = '3004'
+    NODE_ENV = 'production'
+  }
 
   stages {
     stage('Git') {
