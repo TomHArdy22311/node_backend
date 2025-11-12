@@ -13,13 +13,13 @@ pipeline {
 
     stage('Installation') {
           steps {
-            bat 'npm install'
+            sh 'npm install'
           }
         }
 
     stage('start') {
       steps {
-         bat 'npm start'
+         sh 'npm start'
       }
     }
   }
