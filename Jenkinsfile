@@ -22,6 +22,7 @@ pipeline {
 
     stage('Start') {
       steps {
+        sh 'npm install pm2 -g'
         sh 'pm2 start index.js --name backend'
       }
     }
