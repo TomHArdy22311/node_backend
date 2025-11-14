@@ -1,12 +1,8 @@
 pipeline {
   agent any
 
-  tools {nodejs "Jedi"}
-  environment {
-    PORT = '3004'
-    NODE_ENV = 'production'
-  }
-
+  tools {nodejs "Simon"}
+ 
   stages {
     stage('Git') {
       steps {
@@ -20,15 +16,9 @@ pipeline {
       }
     }
 
-    stage('pm2 installation') {
-      steps {
-        sh 'npm install pm2 -g'
-      }
-    }
-
     stage('Start') {
       steps {
-        sh 'pm2 start index.js --name backend'
+        sh 'npm start'
       }
     }
   }
