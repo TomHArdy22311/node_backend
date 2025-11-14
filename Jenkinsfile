@@ -16,9 +16,15 @@ pipeline {
       }
     }
 
+    stage('pm2 installation') {
+      steps {
+        sh 'npm install -g'
+      }
+    }
+
     stage('Start') {
       steps {
-        sh 'npm start'
+        sh 'pm2 start index.js --name Backend'
       }
     }
   }
