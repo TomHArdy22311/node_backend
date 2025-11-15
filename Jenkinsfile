@@ -3,11 +3,6 @@ pipeline {
 
   tools { nodejs "Simon" }
 
-  environment {
-    PM2_HOME = "${WORKSPACE}/.pm2"
-    PM2_PATH = "/usr/local/bin/pm2"   // adjust if needed
-  }
-
   stages {
     stage('Git') {
       steps {
@@ -21,15 +16,15 @@ pipeline {
       }
     }
 
-    stage('Install PM2') {
+    stage('Install PM2 (local)') {
       steps {
-        sh 'npm install pm2 -g'
+        sh 'npm install pm2'
       }
     }
 
-    stage('Start with PM2') {
+    stage('Start') {
       steps {
-        sh '$PM2_PATH start index.js --name Backend --no-daemon'
+        sh './node_modules/.bin/pm2 start index.js --name Backend --no-daemon'
       }
     }
   }
