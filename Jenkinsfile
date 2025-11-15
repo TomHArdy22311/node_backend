@@ -17,22 +17,9 @@ pipeline {
       }
     }
 
-
-    stage('pm2 Installation') {
-      steps {
-        sh 'npm install pm2 -g'
-      }
-    }
-
     stage('Start') {
       steps {
-        sh 'pm2 start index.js --name "Backend"'
+        sh 'npm start'
       }
-    }
-    stage('Check Status') {
-      steps {
-        sh 'pm2 status'
-      }
-    }
   }
 }
