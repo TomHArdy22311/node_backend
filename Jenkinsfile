@@ -24,7 +24,7 @@ pipeline {
 
     stage('Start') {
       steps {
-        sh './node_modules/.bin/pm2 start index.js --name Backend --no-daemon'
+        sh './node_modules/.bin/pm2 start index.js --name Backend'
       }
     }
   }
