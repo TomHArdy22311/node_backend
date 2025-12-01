@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Start') {
       steps{
-        sh 'npm start'
+        sh 'pm2 status'
       }
     }
   }
