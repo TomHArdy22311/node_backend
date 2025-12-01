@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Start') {
       steps{
-        sh 'pm2 restart Backend'
+        sh 'npm start'
       }
     }
   }
