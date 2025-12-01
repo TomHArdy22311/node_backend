@@ -17,8 +17,7 @@ pipeline {
     }
     stage('Start') {
       steps{
-        sh 'pm2 restart'
-        sh 'pm2 start index.js --name KizaBack'
+        sh 'pm2 restart 0'
       }
     }
   }
