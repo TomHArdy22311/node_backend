@@ -1,6 +1,9 @@
 pipeline {
   agent any
 
+  environment {
+    pm2_app_name = "Artorias"
+  }
   tools { nodejs "Simon" }
 
   stages {
@@ -17,7 +20,7 @@ pipeline {
     }
     stage('Start') {
       steps{
-        sh 'pm2 restart 0'
+        sh 'pm2 restart Backend'
       }
     }
   }
