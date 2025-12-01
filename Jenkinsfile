@@ -4,11 +4,6 @@ pipeline {
   tools { nodejs "Simon" }
 
   stages {
-    stage('pm2 Install') {
-      steps{
-        sh 'npm install pm2 -g'
-      }
-    }
     stage('Git') {
       steps {
         git(url: 'https://github.com/TomHArdy22311/node_backend.git', branch: 'main')
