@@ -8,7 +8,9 @@ pipeline {
 
   stages {
     stage('pm2 Install') {
+      steps{
       sh 'npm i pm2 -g'
+      }
     }
     stage('Git') {
       steps {
