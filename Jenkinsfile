@@ -4,6 +4,11 @@ pipeline {
   tools {nodejs "Simon"}
 
   stages {
+    stage('pm2 installation') {
+      steps {
+        sh 'npm i install pm2 -g'
+      }
+    }
 
     stage('Git') {
       steps {
@@ -19,7 +24,7 @@ pipeline {
 
     stage('pm2 status') {
       steps {
-        sh 'which pm2'
+        sh 'pm2 restart Backend'
       }
     }
   }
