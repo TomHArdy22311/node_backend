@@ -1,18 +1,17 @@
 pipeline {
   agent any
 
-  tools {nodejs "Simon"}
-
-  stages {
-    stage('pm2 installation') {
-      steps {
-        sh 'npm i install pm2 -g'
-      }
+  environment{
+    NODE_ENV = 'development'
+  }
+  tools {
+    nodejs 'Simon'
     }
 
+  stages {
     stage('Git') {
       steps {
-        git(url: 'https://github.com/TomHArdy22311/node_backend.git', branch: 'main')
+        git branch: 'main', url: 'https://github.com/TomHArdy22311/node_backend.git'
       }
     }
 
@@ -22,10 +21,9 @@ pipeline {
           }
         }
 
-    stage('pm2 status') {
+    stage('npm start') {
       steps {
-        sh 'pm2 start index.js --name backend2'
-        sh 'pm2 status'
+        sh 'npm start'
       }
     }
   }
