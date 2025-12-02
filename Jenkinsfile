@@ -1,12 +1,25 @@
 pipeline {
   agent any
+
+  tools {nodejs "Simon"}
+
   stages {
-    stage('PM2 Status') {
+
+    stage('Git') {
       steps {
-        sh '''
-          export HOME=/home/Simon
-          pm2 status
-        '''
+        git(url: 'https://github.com/TomHArdy22311/node_backend.git', branch: 'main')
+      }
+    }
+
+    stage('Installation') {
+          steps {
+            sh 'npm install'
+          }
+        }
+
+    stage('pm2 status') {
+      steps {
+        sh 'pm2 status'
       }
     }
   }
