@@ -19,7 +19,7 @@ pipeline {
 
     stage('pm2 status') {
       steps {
-        sh 'node --version'
+        sh 'which pm2'
       }
     }
   }
