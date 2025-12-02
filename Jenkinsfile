@@ -4,7 +4,7 @@ pipeline {
     stage('PM2 Status') {
       steps {
         sh '''
-          export HOME=/home/ubuntu
+          export HOME=/home/Simon
           pm2 status
         '''
       }
