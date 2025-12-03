@@ -26,7 +26,7 @@ pipeline {
         sh 'npm i pm2 -g'
         sh 'pm2 status'
         echo "It is working till now"
-        sh 'pm2 start index.js --name backend'
+        sh 'pm2 show 0'
       }
     }
   }
