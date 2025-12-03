@@ -19,12 +19,6 @@ pipeline {
           steps {
             sh 'npm install'
           }
-        }
-
-    stage('npm start') {
-      steps {
-        sh 'pm2 delete all'
-      }
     }
     stage('starting pm2'){
       steps{
