@@ -20,9 +20,10 @@ pipeline {
             sh 'npm install'
           }
     }
-    stage('Start'){
+    stage('starting pm2'){
       steps{
-              sh 'npm start index.js'
+        sh 'pm2 start npm --name app -- start --cwd /home/Simon/node_backend'
+        sh 'pm2 save'      
       }
     }
   }
