@@ -23,10 +23,9 @@ pipeline {
 
     stage('npm start') {
       steps {
-        sh 'npm i pm2 -g'
-        sh 'pm2 status'
-        echo "It is working till now"
-        sh 'pm2 show 0'
+        sh 'pm2 delete all'
+        sh 'pm2 start npm --name app -- start --cwd /home/Simon/node_backend'
+        sh 'pm2 save'      
       }
     }
   }
