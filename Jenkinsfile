@@ -17,7 +17,7 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'docker build -t "backend".'
+            sh 'docker build -t "backend" .'
           }
     }
     stage('Run COntainer'){
