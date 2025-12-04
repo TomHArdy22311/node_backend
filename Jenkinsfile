@@ -22,7 +22,7 @@ pipeline {
     }
     stage('starting pm2'){
       steps{
-        sh 'pm2 start index.js --name Backend'     
+        sh 'pm2 status'     
       }
     }
   }
