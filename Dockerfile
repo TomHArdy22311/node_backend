@@ -1,4 +1,4 @@
-FROM node 22.21.0
+FROM node:22.21.0
 WORKDIR /node_backend
 COPY package.json* ./
 RUN npm install
