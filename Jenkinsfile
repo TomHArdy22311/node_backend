@@ -17,12 +17,12 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'docker build -t "backend".'
+            sh 'sudo docker build -t "backend".'
           }
     }
     stage('Run COntainer'){
       steps{
-        sh 'docer run -p 3016:3016 backend'     
+        sh 'sudo docer run -p 3016:3016 backend'     
       }
     }
   }
