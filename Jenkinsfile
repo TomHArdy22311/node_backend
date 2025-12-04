@@ -15,15 +15,14 @@ pipeline {
       }
     }
 
-    stage('Installation') {
+    stage('Install') {
           steps {
-            sh 'npm install'
+            sh 'docker --version'
           }
     }
     stage('starting pm2'){
       steps{
-        sh 'pm2 start npm --name app -- start --cwd /home/Simon/node_backend'
-        sh 'pm2 save'      
+        sh 'docker --version'     
       }
     }
   }
