@@ -17,7 +17,6 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'sudo su'
             sh 'docker build -t "backend".'
           }
     }
