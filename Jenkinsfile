@@ -15,14 +15,14 @@ pipeline {
       }
     }
 
-    stage('Install') {
+    stage('Image') {
           steps {
-            sh 'docker --version'
+            sh 'docker build -t "backend".'
           }
     }
-    stage('starting pm2'){
+    stage('Run COntainer'){
       steps{
-        sh 'docker --version'     
+        sh 'docer run -p 3016:3016 backend'     
       }
     }
   }
