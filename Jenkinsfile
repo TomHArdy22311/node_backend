@@ -17,12 +17,12 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'docker build -t "backend" .'
+            sh 'docker build -t "anthony1985/node_backend" .'
           }
     }
     stage('Run COntainer'){
       steps{
-        sh 'docker run -p 3017:3017 backend'     
+        sh 'docker run -p 3017:3017 anthony1985/node_backend'     
       }
     }
   }
