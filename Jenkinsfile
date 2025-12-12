@@ -15,6 +15,12 @@ pipeline {
       }
     }
 
+    stage('Image Pull') {
+      steps{
+        sh 'docker pull anthony1985/node_backend'
+      }
+    }
+
     stage('Image') {
           steps {
             sh 'docker build -t "anthony1985/node_backend" .'
