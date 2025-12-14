@@ -28,7 +28,7 @@ pipeline {
     }
     stage('Run COntainer'){
       steps{
-        sh 'docker run -p 3017:3017 anthony1985/node_backend'     
+        sh 'docker run -d -p 3017:3017 anthony1985/node_backend'     
       }
     }
   }
