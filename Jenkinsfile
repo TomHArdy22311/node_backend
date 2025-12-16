@@ -30,7 +30,7 @@ pipeline {
       steps{
         sh 'docker stop flamboyant_ramanujan || true'
         sh 'docker rm flamboyant_ramanujan || true'
-        sh 'docker run -d -p 3017:3017 anthony1985/node_backend'     
+        sh 'docker run -d \ --name flamboyant_ramanujan \ -p 3017:3017 \ anthony1985/node_backend'     
       }
     }
   }
