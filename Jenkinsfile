@@ -23,12 +23,13 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'docker stop flamboyant_ramanujan'
             sh 'docker build -t "anthony1985/node_backend" .'
           }
     }
     stage('Run COntainer'){
       steps{
+        sh 'docker stop flamboyant_ramanujan || true'
+        sh 'docker rm flamboyant_ramanujan || true'
         sh 'docker run -d -p 3017:3017 anthony1985/node_backend'     
       }
     }
