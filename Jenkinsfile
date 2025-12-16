@@ -23,6 +23,7 @@ pipeline {
 
     stage('Image') {
           steps {
+            sh 'docker stop flamboyant_ramanujan'
             sh 'docker build -t "anthony1985/node_backend" .'
           }
     }
