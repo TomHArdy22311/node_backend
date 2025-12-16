@@ -23,7 +23,6 @@ pipeline {
 
     stage('Image') {
           steps {
-            sh 'docker stop 12f727703b2c'
             sh 'docker build -t "anthony1985/node_backend" .'
           }
     }
