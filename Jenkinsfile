@@ -30,7 +30,7 @@ pipeline {
       steps{
         sh 'docker stop amazing_wilbur || true'
         sh 'docker rm amazing_wilbur || true'
-        sh 'docker run --name amazing_wilbur -p 3017:3017 anthony1985/node_backend'     
+        sh 'docker run -d --name amazing_wilbur -p 3017:3017 anthony1985/node_backend'     
       }
     }
   }
